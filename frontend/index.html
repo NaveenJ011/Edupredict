@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduPredict | AI Student Performance Analysis</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Edu<span>Predict</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#predict">Prediction</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">SMARTER LEARNING WITH AI</p>
+
+            <h1>Predict Your Academic
+                <span>Performance</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover your academic potential using machine learning.
+                Analyze your study habits, attendance and previous marks
+                to understand your expected performance.
+            </p>
+
+            <a href="#predict" class="primary-btn">
+                Predict My Performance →
+            </a>
+        </div>
+
+        <div class="hero-card">
+            <div class="card-icon">🎓</div>
+            <h3>AI-Powered Analysis</h3>
+            <p>Turn your academic data into meaningful insights.</p>
+
+            <div class="stat">
+                <span>Smart</span>
+                <span>Prediction</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="prediction-section" id="predict">
+
+        <div class="section-heading">
+            <p class="tagline">STUDENT ANALYSIS</p>
+            <h2>Predict Your Performance</h2>
+            <p>Enter your academic details below.</p>
+        </div>
+
+        <div class="prediction-card">
+
+            <form id="predictionForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="attendance">Attendance (%)</label>
+                        <input type="number" id="attendance"
+                               min="0" max="100" step="0.1"
+                               placeholder="Example: 85" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="study_hours">Daily Study Hours</label>
+                        <input type="number" id="study_hours"
+                               min="0" max="24" step="0.5"
+                               placeholder="Example: 5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="previous_marks">Previous Marks (%)</label>
+                        <input type="number" id="previous_marks"
+                               min="0" max="100" step="0.1"
+                               placeholder="Example: 78" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignment_marks">Assignment Marks (%)</label>
+                        <input type="number" id="assignment_marks"
+                               min="0" max="100" step="0.1"
+                               placeholder="Example: 90" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="primary-btn predict-btn">
+                    Predict Performance →
+                </button>
+
+            </form>
+
+            <div id="result" class="result-box" hidden>
+                <h3>Your Prediction</h3>
+
+                <div id="predictedMarks" class="predicted-marks">
+                    --
+                </div>
+
+                <p id="performanceCategory"></p>
+
+                <p class="sample-note">
+                    This prediction uses a demonstration model trained
+                    on sample data. It is not a validated academic forecast.
+                </p>
+            </div>
+
+            <div id="analytics" class="analytics-card" hidden>
+                <h3>Academic Performance Analytics</h3>
+                <canvas id="performanceChart"></canvas>
+            </div>
+
+            <p id="errorMessage" class="error-message"></p>
+
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <p class="tagline">ABOUT THE PROJECT</p>
+
+        <h2>Making Academic Insights Smarter</h2>
+
+        <p>
+            EduPredict is a student academic performance analysis
+            and prediction project using Python, Flask and
+            Machine Learning.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 EduPredict | Student Academic Performance Analysis</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
