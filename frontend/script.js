@@ -1,5 +1,5 @@
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://edupredict-f2cg.onrender.com";
 
 const form = document.getElementById("predictionForm");
 const resultBox = document.getElementById("result");
@@ -58,7 +58,6 @@ form.addEventListener("submit", async function (event) {
 
         performanceChart = new Chart(ctx, {
             type: "bar",
-
             data: {
                 labels: [
                     "Attendance",
@@ -67,7 +66,6 @@ form.addEventListener("submit", async function (event) {
                     "Assignment Marks",
                     "Predicted Marks"
                 ],
-
                 datasets: [{
                     label: "Student Performance",
                     data: [
@@ -77,7 +75,6 @@ form.addEventListener("submit", async function (event) {
                         studentData.assignment_marks,
                         data.predicted_marks
                     ],
-
                     backgroundColor: [
                         "#6658e8",
                         "#8d82ef",
@@ -85,19 +82,15 @@ form.addEventListener("submit", async function (event) {
                         "#54bd91",
                         "#f2a64a"
                     ],
-
                     borderRadius: 7
                 }]
             },
-
             options: {
                 responsive: true,
-
                 scales: {
                     y: {
                         beginAtZero: true,
                         max: 100,
-
                         title: {
                             display: true,
                             text: "Score (normalized to 100)"
@@ -115,7 +108,6 @@ form.addEventListener("submit", async function (event) {
     } catch (error) {
         errorMessage.textContent =
             "Unable to connect to the prediction server. " + error.message;
-
     } finally {
         button.disabled = false;
         button.textContent = "Predict Performance →";
